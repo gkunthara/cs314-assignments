@@ -1,193 +1,139 @@
-function charSwap(){
-    let input = prompt("Enter input string: ");
-
-    if(input == null){
-        console.log("ok no input")
-    }
-    else if(input.length <= 1){
-        console.log("input not long enough!")
-    }
-    else{
-        let firstChar = input.charAt(0); //first char
-        let lastChar = input.charAt(input.length - 1); //last char
-        let temp = firstChar; //temp variable for swap
-        firstChar = lastChar;
-        lastChar = temp;
-        let newInput = firstChar + input.slice(1, input.length - 1) + lastChar;
-        alert(newInput);
-    }
+function scrollToOne() {
+    var elmnt = document.getElementById("one");
+    elmnt.scrollIntoView();
 }
 
-function hiString(){
-
-    let input = prompt("Enter input string: ");
-
-    if(input == null){
-        console.log("ok no input")
-    }
-    else if(input.length <= 1){
-        console.log("input not long enough!")
-    }
-    // if first two letters begin with 'Hi'
-    else if(input.slice(0,2) == "Hi"){
-        alert(input);
-    }
-    else{
-        let newString = "Hi" + input;
-        alert(newString);
-    }
+function scrollToTwo() {
+    var elmnt = document.getElementById("two");
+    elmnt.scrollIntoView();
 }
 
-function threeCharsToFront(){
-
-    let input = prompt("Enter input string: ");
-
-    if(input == null){
-        console.log("ok no input")
-    }
-    else if(input.length < 3 ){
-        console.log("input not long enough!")
-    }
-    else{
-        let lastChars = input.slice(-3); //last three chars
-        let newString = lastChars + input.slice(0, input.length - 3);
-        alert(newString);
-    }
+function scrollToThree() {
+    var elmnt = document.getElementById("three");
+    elmnt.scrollIntoView();
 }
 
-function stringToSentences(){
-    let input = prompt("Enter comma separated list: ");
-    let arr = input.split(",");
-    if(input == null){
-       return console.log("ok no input")
-    }
-    else if(arr.length != 3){
-        alert("incorrect input length!")
-    }
-    else{
-        newArray = arr.map(s => s.trim()); //remove leading whitespaces
-        alert(`My favorite color is ${newArray[0]}, ${newArray[1]} are awesome, and I love ${newArray[2]}`);
-    }
+function scrollToFour() {
+    var elmnt = document.getElementById("four");
+    elmnt.scrollIntoView();
+}
+function scrollToFive() {
+    var elmnt = document.getElementById("five");
+    elmnt.scrollIntoView();
 }
 
-function upperOrLower(){
-
-    let input = prompt("Enter input string: ");
-    if(input == null){
-        alert("ok no input")
-    }
-    else if(input.length < 3){
-        alert(input.toUpperCase());
-    }
-    else{
-        let firstChars = input.slice(0, 3).toLowerCase(); //grab first three chars and make lowercase
-        alert(firstChars + input.slice(3));
-    }
+function changeToGreen(){
+    var elmnt = document.getElementById("one");
+    elmnt.style.backgroundColor = "green";
 }
 
-function integerSwap(){
-
-    let input = prompt("Enter comma separated list: ");
-    let arr = input.split(",");
-    if(input == null){
-        alert("ok no input")
-    }
-    else if(arr.length < 2){
-        alert("enter longer list!")
-    }
-    else{
-        let temp = arr[arr.length - 1]; //temp variable is last element
-        arr[arr.length - 1] = arr[0];
-         arr[0] = temp;
-        alert(arr.join());
-    }
+function changeToBlue(){
+    var elmnt = document.getElementById("one");
+    elmnt.style.backgroundColor = "blue";
 }
 
-function longestString(){
-    let input = prompt("Enter comma separated list: ");
-    let arr = input.split(",");
-    let newArray = arr.map(s => s.trim());
-    if(input == null){
-        alert("ok no input")
-    }
-    else{
-        longest = newArray[0];
-
-        //loop through list comparing two elements for which is longer
-        for(i = 1; i < newArray.length; i++){
-            if(longest.length < newArray[i].length){
-                longest = newArray[i];
-            }
-        }
-        alert(longest);
-    }
+function changeColor(){
+   var elmnt =  document.getElementById("buttonText");
+   var section = document.getElementById("two");
+   if(elmnt.value == "Click for pink!"){
+        elmnt.innerHTML = "Click for orange!";
+        elmnt.value = "Click for orange!";
+        section.style.backgroundColor = "pink";
+   }
+   else{
+        elmnt.innerHTML = "Click for pink!";
+        elmnt.value = "Click for pink!";
+        section.style.backgroundColor = "orange";
+   }
 }
 
-function largestEvenNumber(){
-    let input = prompt("Enter comma separated list: ");
-    let arr = input.split(",");
-    let newArray = arr.map(s => Number(s)); //convert strings to numbers
-    newArray = newArray.filter(n => n % 2 == 0); //filter to only have even numbers
-    largest = newArray[0];
-
-    //loop through comparing two elements and choosing which is larger
-    for(i = 1; i < newArray.length; i++){
-        if(largest < newArray[i]){
-            largest = newArray[i];
-        }
-    }
-    alert(largest);
+function addToList(){
+    var text = document.getElementById("textToAdd").value
+    var ul = document.getElementById("ul");
+    var li = document.createElement("li");
+    li.appendChild(document.createTextNode(text));
+    ul.appendChild(li);
 }
 
-function currentDayTime(){
-    let today = new Date();
-    let hour = today.getHours();
-    let meridian = ""
+function removeBob(){
+    var item = document.getElementById("bob");
+    item.parentNode.removeChild(item)
+}
 
-    //if hour is in the PM, convert to normal time
-    if(hour > 12){
-        hour = hour - 12
-        meridian = "PM"
-    }
-    else{
-        hour = hour
-        meridian = "AM"
-    }
-    let minute = today.getMinutes();
-    let msg = hour + ":" + minute;
-    day = today.getDay();
-    weekday = ""
+function removeTim(){
+    var item = document.getElementById("tim");
+    item.parentNode.removeChild(item)
+}
+function removeJack(){
+    var item = document.getElementById("jack");
+    item.parentNode.removeChild(item)
+}
+function removeSam(){
+    var item = document.getElementById("sam");
+    item.parentNode.removeChild(item)
+}
+
+function highlightBob(){
+
+    var itemToHighlight = document.getElementById("Bob");
+
+    var item1 = document.getElementById("Tim");
+    var item2 = document.getElementById("Jack");
+    var item3 = document.getElementById("Sam");
+
+    itemToHighlight.style.backgroundColor = "yellow";
+
+    item1.style.backgroundColor = "lightgray";
+    item2.style.backgroundColor = "lightgray";
+    item3.style.backgroundColor = "lightgray";
+
+}
+
+function highlightTim(){
+
+    var itemToHighlight = document.getElementById("Tim");
     
-    //convert number of day given to actual name of day
-    switch(day){
-        case 1:
-            weekday = "Monday"
-            break;
-        case 2:
-            weekday = "Tuesday"
-            break;
-        case 3:
-            weekday = "Wednesday"
-            break;
-        case 4:
-            weekday = "Thursday"
-            break;
-        case 5:
-            weekday = "Friday"
-            break;
-        case 6:
-            weekday = "Saturday"
-            break;
-        case 7:
-            weekday = "Sunday"
-            break;
-    }
+    var item1 = document.getElementById("Bob");
+    var item2 = document.getElementById("Jack");
+    var item3 = document.getElementById("Sam");
 
-    alert("Today is " + weekday + '.' + '\n' + "It is " + msg + meridian + '.')
+    itemToHighlight.style.backgroundColor = "yellow";
+
+    item1.style.backgroundColor = "lightgray";
+    item2.style.backgroundColor = "lightgray";
+    item3.style.backgroundColor = "lightgray";
+
 }
 
-function unlimited(...args){
-    alert("unlimited Arguments: " + args.join(""))
+
+function highlightJack(){
+
+    var itemToHighlight = document.getElementById("Jack");
+    
+    var item1 = document.getElementById("Bob");
+    var item2 = document.getElementById("Tim");
+    var item3 = document.getElementById("Sam");
+
+    itemToHighlight.style.backgroundColor = "yellow";
+
+    item1.style.backgroundColor = "lightgray";
+    item2.style.backgroundColor = "lightgray";
+    item3.style.backgroundColor = "lightgray";
+
 }
 
-unlimited("psdf", "sdfdsf", "tyuyt", "fgnbfgn")
+function highlightSam(){
+
+    var itemToHighlight = document.getElementById("Sam");
+    
+    var item1 = document.getElementById("Bob");
+    var item2 = document.getElementById("Tim");
+    var item3 = document.getElementById("Jack");
+
+    itemToHighlight.style.backgroundColor = "yellow";
+
+    item1.style.backgroundColor = "lightgray";
+    item2.style.backgroundColor = "lightgray";
+    item3.style.backgroundColor = "lightgray";
+
+}
