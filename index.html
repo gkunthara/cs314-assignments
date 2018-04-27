@@ -1,71 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head> 
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>JS in the Browser</title> 
-    <link rel="stylesheet" href="assignment-styles.css">
+    <title>JS Query</title> 
+    <link rel="stylesheet" href="index.css">
   </head> 
   <body>
+   
+    <div class="container">
+      <h1>JS Query</h1>
+    </div>
+
+    <div class="header">
+      <h1>All Users</h1>
+    </div>
+     
+        <div id="users"></div>
+
+   
+  
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
     <script src="index.js"></script>
-    <section id="selection">
-      <div class="inner-content">
-        <p>Select the number that you want to scroll to:</p>
-        <button onclick="scrollToOne()" >1</button>
-        <button onclick="scrollToTwo()">2</button>
-        <button onclick="scrollToThree()">3</button>
-        <button onclick="scrollToFour()">4</button>
-        <button onclick="scrollToFive()">5</button>
-      </div>
-    </section>
-    <section class="dark-bg" id="one">
-      <div class="inner-content">
-        <p>1. Pick a background color:</p>
-        <button onclick="changeToBlue()">Blue</button>
-        <button onclick="changeToGreen()">Green</button>
-      </div>
-    </section>
-    <section id="two">
-      <div class="inner-content">
-        <p>2. Click the button to change between a pink and orange background:</p>
-        <p>The text on the button will represent the color the user will get.</p>
-        <button id="buttonText" value="Click for pink!" onclick="changeColor()">Click for pink!</button>
-      </div>
-    </section>
-    <section class="dark-bg" id="three">
-      <div class="inner-content">
-        <p>3. Input text to add to the list below</p>
-        <input type="text" id="textToAdd">
-        <button onclick="addToList()">Submit</button>
-        <ul id="ul">
-          <li>One</li>
-          <li>Green</li>
-        </ul>
-      </div>
-    </section>
-    <section id="four">
-      <div class="inner-content">
-        <p>4. If an item is clicked, remove it from the list.</p>
-        <ul id="list">
-          <li id="bob" onclick="removeBob()">Bob</li>
-          <li id="tim" onclick="removeTim()">Tim</li>
-          <li id="jack" onclick="removeJack()">Jack</li>
-          <li id="sam" onclick="removeSam()">Sam</li>          
-        </ul>
-      </div>
-    </section>
-    <section class="dark-bg" id="five">
-      <div class="inner-content">
-        <p>5. If an item is clicked, select it (highlight it) and de-select everything else.</p>
-        <p>This doesn't have to be pretty.</p>
-        <p>Just change the background color of the selected item with a class.</p>
-        <ul>
-          <li onclick="highlightBob()" id="Bob">Bob</li>
-          <li onclick="highlightTim()" id="Tim">Tim</li>
-          <li onclick="highlightJack()" id="Jack">Jack</li>
-          <li onclick="highlightSam()" id="Sam">Sam</li>          
-        </ul>
-      </div>
-    </section>
+
   </body>
 </html>

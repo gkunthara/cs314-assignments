@@ -1,139 +1,86 @@
-function scrollToOne() {
-    var elmnt = document.getElementById("one");
-    elmnt.scrollIntoView();
+let showTodos = false
+let showAlbums = false
+
+$( document ).ready(function() {
+    getData();
+  });
+
+function getData() {
+    $.get('https://jsonplaceholder.typicode.com/users')
+        .done((data) => {
+        $.each(data, function(idx, el) {
+            $('#users').append($(`
+            <div class="user" id='main-${el.id}'>
+                ${el.name} <br>
+                ${el.email} <br>
+                ${el.company.name} <br>
+                <button id='${el.id}' class='todoBtn'>To Do</button>
+                <button id='${el.id}' class='albumBtn'>Albums</button>
+            </div>`));
+        });
+    })
+
+    $('#users').on('click', '.todoBtn', function(){
+        doTodo(this.id)
+        
+    });
+
+    $('#users').on('click', '.albumBtn', function(){
+        doAlbum(this.id)
+    });
 }
 
-function scrollToTwo() {
-    var elmnt = document.getElementById("two");
-    elmnt.scrollIntoView();
+function doTodo(id){
+
+    if(showTodos === false){
+        let isCompleted = ""
+        $.get(`https://jsonplaceholder.typicode.com/todos/${id}`)
+        .done((data) => {
+            if(data.completed === false){
+                isCompleted = "fas fa-times"
+            }
+            else{
+                isCompleted = "fas fa-check"
+            }
+            $(`#main-${id}`).append($(`
+            <div class='todos'>
+            <h4>Todo</h4>
+            ${data.title}<i class='${isCompleted}'></i>
+            <br> <br>
+             </div>`));
+        })
+        showTodos = true
+        $(`.albums`).hide(500)
+        showAlbums = false
+
+    }
+    else{
+        $(`.todos`).hide(500)
+        showTodos = false
+    }
 }
 
-function scrollToThree() {
-    var elmnt = document.getElementById("three");
-    elmnt.scrollIntoView();
-}
+function doAlbum(id){
 
-function scrollToFour() {
-    var elmnt = document.getElementById("four");
-    elmnt.scrollIntoView();
-}
-function scrollToFive() {
-    var elmnt = document.getElementById("five");
-    elmnt.scrollIntoView();
-}
+    if(showAlbums === false){
+        $.get(`https://jsonplaceholder.typicode.com/albums/${id}`)
+        .done((data) => {
+            $(`#main-${id}`).append($(`
+            <div class='albums'>
+            <h4>Albums</h4>
 
-function changeToGreen(){
-    var elmnt = document.getElementById("one");
-    elmnt.style.backgroundColor = "green";
-}
+            ${data.title}
+            <br> <br>
+             </div>`));
+        })
+        showAlbums = true
+        $(`.todos`).hide(500)
+        showTodos = false
 
-function changeToBlue(){
-    var elmnt = document.getElementById("one");
-    elmnt.style.backgroundColor = "blue";
-}
-
-function changeColor(){
-   var elmnt =  document.getElementById("buttonText");
-   var section = document.getElementById("two");
-   if(elmnt.value == "Click for pink!"){
-        elmnt.innerHTML = "Click for orange!";
-        elmnt.value = "Click for orange!";
-        section.style.backgroundColor = "pink";
-   }
-   else{
-        elmnt.innerHTML = "Click for pink!";
-        elmnt.value = "Click for pink!";
-        section.style.backgroundColor = "orange";
-   }
-}
-
-function addToList(){
-    var text = document.getElementById("textToAdd").value
-    var ul = document.getElementById("ul");
-    var li = document.createElement("li");
-    li.appendChild(document.createTextNode(text));
-    ul.appendChild(li);
-}
-
-function removeBob(){
-    var item = document.getElementById("bob");
-    item.parentNode.removeChild(item)
-}
-
-function removeTim(){
-    var item = document.getElementById("tim");
-    item.parentNode.removeChild(item)
-}
-function removeJack(){
-    var item = document.getElementById("jack");
-    item.parentNode.removeChild(item)
-}
-function removeSam(){
-    var item = document.getElementById("sam");
-    item.parentNode.removeChild(item)
-}
-
-function highlightBob(){
-
-    var itemToHighlight = document.getElementById("Bob");
-
-    var item1 = document.getElementById("Tim");
-    var item2 = document.getElementById("Jack");
-    var item3 = document.getElementById("Sam");
-
-    itemToHighlight.style.backgroundColor = "yellow";
-
-    item1.style.backgroundColor = "lightgray";
-    item2.style.backgroundColor = "lightgray";
-    item3.style.backgroundColor = "lightgray";
-
-}
-
-function highlightTim(){
-
-    var itemToHighlight = document.getElementById("Tim");
+    }
+    else{
+        $(`.albums`).hide(500)
+        showAlbums = false
+    }
     
-    var item1 = document.getElementById("Bob");
-    var item2 = document.getElementById("Jack");
-    var item3 = document.getElementById("Sam");
-
-    itemToHighlight.style.backgroundColor = "yellow";
-
-    item1.style.backgroundColor = "lightgray";
-    item2.style.backgroundColor = "lightgray";
-    item3.style.backgroundColor = "lightgray";
-
-}
-
-
-function highlightJack(){
-
-    var itemToHighlight = document.getElementById("Jack");
-    
-    var item1 = document.getElementById("Bob");
-    var item2 = document.getElementById("Tim");
-    var item3 = document.getElementById("Sam");
-
-    itemToHighlight.style.backgroundColor = "yellow";
-
-    item1.style.backgroundColor = "lightgray";
-    item2.style.backgroundColor = "lightgray";
-    item3.style.backgroundColor = "lightgray";
-
-}
-
-function highlightSam(){
-
-    var itemToHighlight = document.getElementById("Sam");
-    
-    var item1 = document.getElementById("Bob");
-    var item2 = document.getElementById("Tim");
-    var item3 = document.getElementById("Jack");
-
-    itemToHighlight.style.backgroundColor = "yellow";
-
-    item1.style.backgroundColor = "lightgray";
-    item2.style.backgroundColor = "lightgray";
-    item3.style.backgroundColor = "lightgray";
-
 }
