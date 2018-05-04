@@ -1,30 +1,130 @@
-@font-face {
-    font-family: 'ralewayregular';
-    src: url('fonts/raleway-regular-webfont.eot');
-    src: url('fonts/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/raleway-regular-webfont.woff2') format('woff2'),
-         url('fonts/raleway-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  
-  }
-  
-  html {
-    font-family: 'ralewayregular', Verdana, sans-serif;
-    box-sizing: border-box;
-  }
-  
-  .container{
-    display: flex;
-    background-color: lightblue;
-    justify-content: center
-  }
-  
-  .header{
-      display: flex;
-      justify-content: center;
-  }
+html, body {
+  width: 100%;
+  background-color: #FFF;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
 
-.user{
-    margin-top: 25px;
 }
+
+.container{
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  min-height: 100%;
+  flex: 1;
+}
+
+.navbar{
+  padding: 25px;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.navbar-links{
+  display: flex;
+  padding: 10px;
+  width: 40vw;
+  justify-content: space-around;
+}
+
+.nav-link{
+  text-decoration: none;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.main{
+  margin-left: 50px;
+  width: 90vw;
+  padding: 10px;
+  display: flex;
+}
+
+.main-button{
+  margin-top: 35px;
+}
+
+.learn-more{
+  padding: 15px 150px;
+  border-radius: 5px;
+  background-color: #0070B0;
+  border: #0070B0;
+  text-decoration: none;
+  color: #FFF;
+  font-size: 25px;
+  transition: background-color 0.5s ease;
+}
+
+.learn-more:hover{
+  background-color: #333;
+  box-shadow: 0 10px 28px 0 rgba(0,0,0,0.2);
+}
+
+
+
+.greetings{
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.support{
+  font-size: 17px;
+  color: #526975;
+  font-weight: 300;
+  line-height: 35px;
+}
+
+.text-section{
+  margin-top: 100px;
+  width: 45vw;
+}
+
+.me-section{
+  width: 45vw;
+  display: flex;
+  justify-content: center;
+}
+
+.knowledge-section{
+  margin-left: 50px;
+  width: 90vw;
+  padding: 10px;
+  display: flex;
+}
+
+.sub-header{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
+.text-section-two{
+  margin-top: 100px;
+  width: 55vw;
+}
+
+.next-button{
+  margin-top: 35px;
+}
+
+.next-more{
+  padding: 15px 75px;
+  border-radius: 5px;
+  background-color: #0070B0;
+  border: #0070B0;
+  text-decoration: none;
+  color: #FFF;
+  font-size: 17px;
+  transition: background-color 0.5s ease;
+}
+
+.next-more:hover{
+  background-color: #333;
+  box-shadow: 0 10px 28px 0 rgba(0,0,0,0.2);
+}
+
+

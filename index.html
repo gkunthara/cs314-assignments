@@ -4,26 +4,136 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>JS Query</title> 
+    <title>Final</title> 
     <link rel="stylesheet" href="index.css">
-  </head> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"> 
+   </head> 
   <body>
    
     <div class="container">
-      <h1>JS Query</h1>
-    </div>
+      <div class="navbar">
+        <div class="navbar-links">
+            <a class="nav-link" href="resume.html">Subscribe</a>
+            <a class="nav-link" href="projects.html">Location</a>
+            <a class="nav-link" href="Contact.html">Prices!</a>
+        </div>
+      </div>
 
-    <div class="header">
-      <h1>All Users</h1>
+        <div class="main">
+          <div class="text-section">
+              <h1 class="greetings">Cryptocurrencies.</h1>
+              <h3 class="support">
+                This last year, all the latest tect news seem to revolve around cryptocurrencies
+                and of course their surging and volatile prices. But most people don't know much
+                about cryptocurrencies. Want to learn some knowledge to show off to your friends??
+              </h3>
+              <div class="main-button">
+                  <a class="learn-more" onclick="scrollToOne()">Yeah!!!</a>
+              </div>
+          </div>
+          <div class="me-section">
+              <img class="me" src="images/Me.svg" alt="me"/>
+          </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <br>
+
+        <div class="knowledge-section" id="one">
+          <div class="me-section">
+            <img class="me" src="images/Me.svg" alt="knowledge"/>
+          </div>
+          <div class="text-section-two">
+          <h1 class="sub-header">So what are cryptocurrencies again?</h1>
+          <h3 class="support">
+            As its name suggests, cryptocurrencies are an electronic cash system.
+            The goal behind cryptocrrencies is to offer people a new, potentially better
+            way of completing transactions that eliminates the need for a middle man (i.e. a financial institution like a bank).
+            Instead of sending money through a "trusted" third party, cryptocurrencies utilize a cryptographic proof system to ensure
+            valid payments. In spite their claims, the name cryptocurrencies is becoming somewhat of a misnomer. 
+          </h3>
+          <div class="next-button">
+              <a class="next-more" onclick="scrollToTwo()">What is this Bitcoin thing?</a>
+          </div>
+          </div>
+        </div>
+
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <br>
+
+
+
+        <div class="knowledge-section" id="two">
+            <div class="me-section">
+              <img class="me" src="images/Me.svg" alt="knowledge"/>
+            </div>
+            <div class="text-section-two">
+            <h1 class="sub-header">Ahhh yes, Bitcoin you ask!</h1>
+            <h3 class="support">
+             Bitcoin is pretty special. Its claim to fame is as the first cryptocurrency.
+             It was started back in 2009 by a mysterious figure or entity only known as Satoshi Nakamoto.
+             <b>No one has substantial evidence as to who Satoshi Nakamoto is.</b> Isn't that crazy??
+             When Bitcoin hit its all-time high back in December 2017, Satoshi Nakamoto's estimated
+             net-worth based off the number of bitcoin he/she/they/it own (~1 million BTC) was $19.4 billion,
+             making Satoshi the 44th richest person in the world.
+            </h3>
+            <div class="next-button">
+                <a class="next-more" onclick="scrollToThree()">So then what are all these other cryptocurrencies out there??</a>
+            </div>
+            </div>
+          </div>
+
+          <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <br>
+
+
+          <div class="knowledge-section" id="three">
+              <div class="me-section">
+                <img class="me" src="images/Me.svg" alt="knowledge"/>
+              </div>
+              <div class="text-section-two">
+              <h1 class="sub-header">I'm glad you asked about the other cryptocurrencies!</h1>
+              <h3 class="support">
+               There are literally over a thousand cryptocurrencies, and that's why I say the name is somewhat of a misnomer (
+                 Most people agree that we don't need this many currencies...
+               ) There are a few currencies out there that either look to dethrone Bitcoin or extend upon its concept.
+                For example, Litecoin (LTC) believes that its transactions are much faster than Bitcoin's.
+                Ethereum (ETH) looks to act more as a "world computer" rather than as a form of currency. However, the main aspect
+                that all these currencies share is they are all based off of a digital coin type model.
+  
+              </h3>
+              <div class="next-button">
+                  <a class="next-more" href="projects.html">Really, over a thousand cryptocurrencies??</a>
+              </div>
+              </div>
+            </div>
+
     </div>
-     
-        <div id="users"></div>
 
    
   
   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
     <script src="index.js"></script>
 
   </body>
