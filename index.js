@@ -22,18 +22,7 @@ function validateForm() {
         return false;
     }
     else{
-        // var h1 = document.createElement("h1")
-        // var br = document.createElement("br");
-        // var nameOutput = document.createTextNode(name)
-        // var emailOutput = document.createTextNode(email)
-        // var ageOutput = document.createTextNode(age)
-        // h1.appendChild(nameOutput)
-        // h1.appendChild(emailOutput)
-        // h1.appendChild(ageOutput)
-        // h1.appendChild(br)
-        // document.body.appendChild(h1);
-
-
+    
         $('#form-output').append($(`
         <div class="price-container space coin-style">
                     <h1 class="bold">Name</h1>
