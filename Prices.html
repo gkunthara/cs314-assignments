@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Prices</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"> 
+</head>
+    <body>
+        <div class="container">
+            <div class="navbar">
+                <div class="navbar-links">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="Subscribe.html">Subscribe</a>
+                    <a class="nav-link" href="Location.html">Location</a>
+                    <a class="nav-link" href="Prices.html">Prices!</a>
+                </div>
+            </div>
+            <div class="header space">
+                Financial Info for top 10 currencies (based on popularity)
+            </div>
+            <div class="price-container space coin-style">
+                <h1 class="bold">Name</h1>
+                <h1 class="bold">Symbol</h1>
+                <h1 class="bold">Price (USD) </h1>
+                <h1 class="bold">Market Cap (USD)</h1>
+            </div>
+            <div id="prices"></div>
+            
+
+            <div class="global-button">
+                    <a class="global-data" onclick="globalRequest()">Looking for global data?</a>
+            </div>
+
+
+            <div id="global"></div>
+
+            <div class="header space">
+                    data based on CoinMarketCap API
+            </div>
+
+        </div>
+
+        
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="request.js"></script>
+    </body>
+</html>

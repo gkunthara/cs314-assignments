@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Subscribe</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+    <body>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-links">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="Subscribe.html">Subscribe</a>
+                <a class="nav-link" href="Location.html">Location</a>
+                <a class="nav-link" href="Prices.html">Prices!</a>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h1 class="contact-head space">Interested in learning more?</h1>
+            <h3 class="support space">
+                Subscribe to my email list and I'll send you weekly newsletters about the crypto space!
+              </h3>
+            <form class="subscribe-form" onsubmit="return validateForm()">
+                <h1 class="contact">Name</h1>
+                <input class="input-section" type="text" id="firstname" name="firstname">
+                <h1 class="contact">Email </h1>
+                <input class="input-section" type="email" id="email" name="email">
+                <h1 class="contact">Age</h1>
+                <input class="input-section" type="number" id="age">
+                <div class="submit-section">
+                    <input type="submit" value="Submit" class="submit-button" id="submit">
+                </div>
+            </form>
+            <div id="form-output"></div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    </body>
+</html>
